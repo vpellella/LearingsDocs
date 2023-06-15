@@ -1,0 +1,11 @@
+Angular 15:		November 16, 2022
+				Standalone components is stable 
+				Modules are getting replaced
+					provideHttpClient instead of HttpClientModule
+					provideRouter instead of RouterModule forRoot/ forChild
+				Directive Composition API
+					using already defined directives in other directives/components
+				Image Directive (NgOptimized Image) is stable use ngSrc instead of src
+				Guards can be used within the routes canActive using lamda'src
+				Better Stack traces
+				

@@ -1,0 +1,368 @@
+102007670 
+
+
+FaultTolerance & Implementation
+Idempotent vs Non Idempotent
+Api Registry
+PATCH vs PUT
+volatile keyword
+ThreadLocal
+
+
+
+Cloud Config Server
+Config Client
+Fiegn Client - Client Side Load balancing which is provided by eureka client
+Service Registry/Naming Server - Eureka Server from Netflix (Spring Cloud Regsitry)
+Eureka Discovery Client - register with Eureka Server
+API Gateway - earlier Zuul now Spring Cloud API Gateway
+Resillence4j - Netflix Hystrix is earlier version used for circuit breaker pattern
+	Retry - number of retries
+	CircuitBreaker - exponenttial retry
+	Rate Limiting  - Number of requests in certain time
+	Bulk Head - Concurrent calls to the request
+	
+	
+HariHaran - Wellsfargo
+
+Segment level locking
+
+Session Tracking in JWT
+
+
+Design Patterns
+SOLID Principles - 
+	Single Responsibility
+	Open Closed
+	Liskov substitution
+	Interface Segregation
+	Dependency Inversion
+
+Microservices SAGA - 
+
+event bubbling - event happening from child to parent all the way to top
+event loops - used to call diff functions when one function is blocking our task
+asynchronous calls in angular - async and await
+promise of
+
+
+List<String> list = new ArrayList();
+list.add("a");
+list.add("b");
+list.add("c");
+list.add("d");
+ 
+Stream stream1 = list.stream().filter(str -> str.equals("e"));
+ 
+list.add("e");
+ 
+output = stream1.findAny();
+
+ 
+
+
+overriding default methods
+
+Singleton 
+
+public class A {
+	
+	private synchronized static A singleObj = null;
+	private A(){
+	
+	}
+	
+	
+	public static A getInstance() {
+		synchronized(singleObj) {
+			if(singleObj == null) {
+				singleObj =  new A();
+			}
+		}
+
+			return singleObj;
+	}
+	
+	
+}
+
+
+runModules()
+    {
+       module1()
+       {
+            persists on Table1
+        }
+       module2()
+       {
+            persists on Table2(Audit log table)
+        }
+       module3()
+       {
+            persists on table3
+            //encountered the Exception
+        }
+     
+    }
+	
+	
+	transactional flows in spring boot
+	
+	
+	
+	
+------------ QualiTest - L1 ---------------
+volatile keyword
+HashMap
+Interceptor
+remove duplicates from array of objects
+
+
+------------ QualiTest - L2 ---------------
+class Employee{​​  
+   int id;  
+   String name;  
+   float salary; 
+}
+List< Employee > empList = new ArrayList< Employee >();  
+       empList .add(new Employee (1,"AA",25000f));  
+       empList .add(new Employee (2,"BB",30000f));  
+       empList .add(new Employee (3,"CC",28000f));  
+       empList .add(new Employee (4,"DD",28000f));  
+       empList .add(new Employee (5,"EE",90000f));
+
+List<String> empNames = empList.stream().filter(emp -> emp.salary > 25000).map(Employee::name).collect(Collectors.toList());
+
+double totaal = empList.stream().map(Employee::salary).collect(Collectors.summingdouble());
+
+
+class A
+{
+    public void fetch()
+    {
+    //some code
+    }
+ 
+}
+ 
+Class B extends A
+{
+    public void fetch()
+    {
+    //some code
+    }
+    
+    public void draw(){
+ 
+    }
+}
+ 
+Class test
+{
+ 
+    public void getValues(A a)
+    {
+     a.fetch();
+	 a instanceof B 
+	 (B  a ) .draw()
+     a.draw();
+     
+    }
+ 
+}
+
+A a = new B();
+
+
+Salting 
+
+Emp -> deptId  Dept
+
+select empid, name, sal, deptId from emp, dept
+where 
+emp.deptId = dept.deptId and
+emp.salary > ?;
+
+
+
+--------------- Conduent - L1 ---------------
+list.stream().filter(item -> item.quantity >10).map(Item::name).collect(Collectors.toList());
+
+default methods
+public static methods
+Function Interfaces - Predicates, Function
+
+Encapsulation -> DTO, Entity
+PolyMorphism -> execute(1, arguments), 
+Inheritance -> XMLtra, Json , Transfor
+Aggregation -> Entity
+
+Employee - 1000 remove duplicates & sort them
+
+JMS, RPC
+
+Serial in Singleton class
+
+TV <-> Remote ->
+
+10 
+
+
+public class TestClass {
+public static void main(String[] args) {
+     someMethod(null);
+}
+public static void someMethod(Object o) {
+System.out.println("Object method Invoked");
+}
+public static void someMethod(String s) {
+System.out.println("String method Invoked");
+}
+}
+
+Armstrong number is sum of cube of all three numbers of the given number.
+ 
+153 = 1*1*1 + 5*5*5 + 3*3*3
+
+result = 0
+while(input >0)
+rem = input % 10 ->3
+result = (result)+  rem* rem* rem
+input = input /10 ->15-0
+
+
+------------------------------- NASDAQ - L1 -------------------------
+
+public Box
+{
+    public Box InnerBox;
+    piblic String Boxname;
+}
+
+public Box getBox(String Boxname)
+{
+	
+	while(box != null) {
+		if(Boxname.equals(box.Boxname)
+			return box;
+		
+		box = box.InnerBox;
+	}
+}
+
+list.stream().filter(item -> item.quan > 10).collect(Collectors.toList());
+
+
+
+Transaction Propagations
+Who creates beans in spring
+User  -> City - saving relations
+
+Find duplicate records in a table
+
+Stored procedure
+Reductions in streams :: reduce
+
+Who will start the run method in the Thread
+what makes main thread to run at last
+
+synchronized blocks advantages
+Executing a method inside a jar from outside
+
+
+call multiple services with out wasting time
+
+
+
+jdbc.execute("", map)
+Docker swarm
+
+
+-- Person(id, firstname, lastname, address, email, contact_no)
+-- User(id, login, Active, person_id) 
+-- Application(id, name, policy)
+-- ApplicationUsers(application_id, userId, added_on, deleted)
+
+CREATE TABLE Person
+    (`id` bigint primary key auto_increment,
+    `firstname` varchar(20),
+    `lastname` varchar(20),
+     `address` varchar(20),
+     `email` varchar(20),
+     `contact_no` varchar(20));
+CREATE TABLE `User`
+    (`id` bigint primary key auto_increment,
+    `login` varchar(20),
+    `Active` tinyint,
+     `person_id` bigint);
+CREATE TABLE `Application`
+    (`id` bigint primary key auto_increment,
+    `name` varchar(20),
+    `policy` varchar(20));
+
+CREATE TABLE `ApplicationUsers`
+    (`application_id` bigint,
+     `user_id` bigint,
+    `added_on` timestamp,
+    `deleted` tinyint);
+    
+ -- insert rows
+ Insert into Person values(1, 'Robert', 'John', 'Denmark', 'rjohn@abc.com', '17643675344');
+ Insert into Person values(2, 'Mike', 'P', 'Denmark', 'mikep@abc.com', '4565093845989');
+ Insert into Person values(3, 'Kumar', 'J', 'UK', 'kumarj22@abc.com', '4574493030');
+ Insert into Person values(4, 'Liam', 'B', 'UK', 'liam_m@abc.com', '98459689686');
+ Insert into Person values(6, 'Deno', 'M', 'Japan', 'deno@abc.com', '1324266783');
+ Insert into Person values(5, 'Soumya', 'A', 'Korea', 'somya@abc.com', '00592389898');
+ Insert into Person values(7, 'Sergey', 'V', 'Nepal', 'Sergey@abc.com', '67798333455');
+
+Insert into `User` values(1, 'mikep', 1, 2);
+ Insert into `User` values(2, 'dm', 1, 6);
+ Insert into `User` values(3, 'sgv', 0, 7);
+ Insert into `User` values(4, 'kumarj', 1, 3);
+ Insert into `User` values(5, 'rj', 1, 1);
+ 
+ Insert into `Application` values(1020, 'Accounts', 'Internal');
+ Insert into `Application` values(1021, 'Technology', 'Internal');
+ Insert into `Application` values(1022, 'Customers', 'External');
+ 
+ Insert into ApplicationUsers values(1022, 3, CURRENT_TIMESTAMP, 0);
+ Insert into ApplicationUsers values(1021, 1, CURRENT_TIMESTAMP, 0);
+ Insert into ApplicationUsers values(1021, 1, CURRENT_TIMESTAMP, 0);
+ Insert into ApplicationUsers values(1022, 2, CURRENT_TIMESTAMP, 0);
+ Insert into ApplicationUsers values(1020, 4, CURRENT_TIMESTAMP, 0);
+ Insert into ApplicationUsers values(1020, 3, CURRENT_TIMESTAMP, 0);
+ 
+ -- list all users with name not added to any application
+ -- list all active users of Application 'Accounts', 'Technology'
+
+
+
+
+
+folder & file
+class Folder {
+	List<Folder> subFolders;
+	List<String> stringFiles;
+	String name;
+}
+A/
+	B
+	C/
+		x.txt
+	D
+	
+path = "";
+String getPath(Folder f, String FileName) {
+	path= path + name + "/"; -> A/
+	boolean fileFound = f.getStringFiles.stream().findAny(fname -> fname.equals(FileName));
+	if(!fileFound){
+		path = path.remove(name +"/) -> A/
+		f.getSubFolders().forEach( fold -> {
+			getPath(fold, FileName);
+		}
+		throw new FileNotFoundEx();
+	}
+	
+	return path + FileName;
+	
+}
